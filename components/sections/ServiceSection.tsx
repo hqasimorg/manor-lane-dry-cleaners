@@ -4,44 +4,44 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Card } from "@/components/ui/Card";
 import { CardTitle, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Shirt, WashingMachine, Scissors, Bed, Building2, Sparkles, ArrowRight } from "lucide-react";
+import { Shirt, WashingMachine, Scissors, Sparkles, Heart, Zap, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: Shirt,
+    icon: Sparkles,
     title: "Dry Cleaning",
-    description: "Expert care for suits, dresses, coats, and delicate fabrics.",
+    description: "Expert care for suits, dresses, coats, and delicate fabrics. Dry cleaning done right.",
     href: "/services/dry-cleaning",
+  },
+  {
+    icon: Shirt,
+    title: "Shirt Service",
+    description: "Relax and let us handle it. Shirts washed, pressed, and ready to wear.",
+    href: "/services/shirt-service",
   },
   {
     icon: WashingMachine,
     title: "Laundry Service",
-    description: "Wash, dry, and fold — done for you.",
+    description: "Just drop off your laundry and we'll take care of the rest.",
     href: "/services/laundry-service",
   },
   {
-    icon: Sparkles,
-    title: "Wash & Iron",
-    description: "Crisp shirts and fresh bedding, pressed and ready.",
-    href: "/services/wash-and-iron",
+    icon: Zap,
+    title: "Ironing Service",
+    description: "We'll iron away your clothes' creases. Crisp and ready.",
+    href: "/services/ironing-service",
   },
   {
     icon: Scissors,
-    title: "Alterations",
-    description: "Hemming, repairs, and adjustments by experienced hands.",
-    href: "/services/alterations",
+    title: "Alterations & Repairs",
+    description: "Don't toss it — repair or alter it. Hemming, resizing, and more.",
+    href: "/services/alterations-repairs",
   },
   {
-    icon: Bed,
-    title: "Duvet & Bedding",
-    description: "Deep clean for duvets, pillows, and bed linen.",
-    href: "/services/duvet-bedding-cleaning",
-  },
-  {
-    icon: Building2,
-    title: "Commercial",
-    description: "Regular laundry services for London businesses.",
-    href: "/commercial-laundry",
+    icon: Heart,
+    title: "Wedding Dress",
+    description: "Choose Manor Lane for your wedding dress care. Expert cleaning and preservation.",
+    href: "/services/wedding-dress-cleaning",
   },
 ];
 

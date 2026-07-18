@@ -1,18 +1,15 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { SectionHeader } from "@/components/shared/SectionHeader";
-import { Card } from "@/components/ui/Card";
-import { CardTitle, CardContent } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { CTABanner } from "@/components/shared/CTABanner";
-import Link from "next/link";
-import { Shirt, WashingMachine, Scissors, Bed, Building2, Sparkles, ArrowRight } from "lucide-react";
+import { Card, CardTitle, CardContent } from "@/components/ui/Card";
+import { ArrowRight, Shirt, WashingMachine, Scissors, Sparkles, Heart, Zap, Home, Layers, Snowflake, Palette, GraduationCap, Wrench, PanelLeft, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Dry Cleaning & Laundry Services Hither Green | Manor Lane",
   description:
-    "Full range of dry cleaning, laundry, and garment care services in Hither Green, London. From everyday washing to delicate fabrics.",
+    "Full range of dry cleaning, laundry, and garment care services in Hither Green, London. From everyday washing to delicate fabrics, alterations, rugs, leather, and more.",
   alternates: {
     canonical: "/services",
   },
@@ -20,40 +17,94 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: Shirt,
+    icon: Sparkles,
     title: "Dry Cleaning",
-    description: "Expert care for suits, dresses, coats, and delicate fabrics. Professional solvent-based cleaning for your most precious garments.",
+    description: "Expert care for suits, dresses, coats, and delicate fabrics. Dry cleaning done right.",
     href: "/services/dry-cleaning",
+  },
+  {
+    icon: Shirt,
+    title: "Shirt Service",
+    description: "Relax and let us handle it. Shirts washed, pressed, and ready to wear.",
+    href: "/services/shirt-service",
   },
   {
     icon: WashingMachine,
     title: "Laundry Service",
-    description: "Wash, dry, and fold — done for you. Perfect for busy households who want fresh clothes without the hassle.",
+    description: "Just drop off your laundry and we'll take care of the rest.",
     href: "/services/laundry-service",
   },
   {
-    icon: Sparkles,
-    title: "Wash & Iron",
-    description: "Crisp shirts and fresh bedding, washed and pressed to a crisp finish. Look sharp every day.",
-    href: "/services/wash-and-iron",
+    icon: Zap,
+    title: "Ironing Service",
+    description: "We'll iron away your clothes' creases — crisp and ready for anything.",
+    href: "/services/ironing-service",
   },
   {
     icon: Scissors,
-    title: "Alterations",
-    description: "Hemming, repairs, and adjustments by experienced hands. If it doesn't fit, we can fix it.",
-    href: "/services/alterations",
+    title: "Alterations & Repairs",
+    description: "Don't toss it — repair or alter it. Hemming, resizing, zip repairs, and more.",
+    href: "/services/alterations-repairs",
   },
   {
-    icon: Bed,
-    title: "Duvet & Bedding",
-    description: "Deep clean for duvets, pillows, and bed linen. Refresh your bedroom with professionally cleaned bedding.",
-    href: "/services/duvet-bedding-cleaning",
+    icon: Heart,
+    title: "Wedding Dress Cleaning",
+    description: "Choose Manor Lane for your wedding dress care. Expert cleaning and preservation.",
+    href: "/services/wedding-dress-cleaning",
   },
   {
-    icon: Building2,
-    title: "Commercial Laundry",
-    description: "Regular, reliable service for London businesses. Hotels, restaurants, salons, and more.",
-    href: "/commercial-laundry",
+    icon: Shield,
+    title: "Natives Cleaning",
+    description: "Preserving heritage, one garment at a time. Specialist care for traditional garments.",
+    href: "/services/natives-cleaning",
+  },
+  {
+    icon: Home,
+    title: "Upholstery Cleaning",
+    description: "Clean sofa, happy life. Professional upholstery cleaning for your home.",
+    href: "/services/upholstery-cleaning",
+  },
+  {
+    icon: Layers,
+    title: "Rug Cleaning",
+    description: "Fresh rug, joy of walking. Deep cleaning for all types of rugs.",
+    href: "/services/rug-cleaning",
+  },
+  {
+    icon: Snowflake,
+    title: "Skiwear Cleaning",
+    description: "Luxury brand care for your skiwear and specialist outdoor garments.",
+    href: "/services/skiwear-cleaning",
+  },
+  {
+    icon: Palette,
+    title: "Dye Service",
+    description: "We can even dye your clothes — giving them a new look and a second life.",
+    href: "/services/dye-service",
+  },
+  {
+    icon: GraduationCap,
+    title: "School Uniform",
+    description: "Keep uniforms looking their best. Regular care for school clothing.",
+    href: "/services/school-uniform",
+  },
+  {
+    icon: Wrench,
+    title: "Shoe Repairs",
+    description: "Re-heel, save your soles, and restore comfort to your step.",
+    href: "/services/shoe-repairs",
+  },
+  {
+    icon: PanelLeft,
+    title: "Curtain Cleaning",
+    description: "Time to drop the curtains and keep allergens away. Professional curtain care.",
+    href: "/services/curtain-cleaning",
+  },
+  {
+    icon: Shield,
+    title: "Leather & Suede",
+    description: "Trust your leather care to the experts. Cleaning and conditioning for leather and suede.",
+    href: "/services/leather-suede-cleaning",
   },
 ];
 
@@ -62,7 +113,7 @@ export default function ServicesPage() {
     <>
       <PageHeader
         title="Our Services"
-        subtitle="Professional dry cleaning and laundry in Hither Green, London"
+        subtitle="Professional dry cleaning and garment care in Hither Green, London"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
@@ -71,12 +122,7 @@ export default function ServicesPage() {
 
       <section className="bg-neutral-off-white section-padding">
         <Container>
-          <SectionHeader
-            title="What We Do"
-            subtitle="Whether it's your best suit, your weekly laundry, or a duvet that's seen better days — we handle it with care."
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <Link key={service.href} href={service.href} className="group">
                 <Card className="h-full group-hover:shadow-card-hover transition-shadow">
@@ -99,8 +145,8 @@ export default function ServicesPage() {
       </section>
 
       <CTABanner
-        title="Need regular laundry for your business?"
-        subtitle="We provide reliable commercial laundry services for hotels, restaurants, salons, and more across London."
+        title="Not sure which service you need?"
+        subtitle="Give us a call or send a WhatsApp and we'll point you in the right direction."
       />
     </>
   );

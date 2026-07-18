@@ -4,10 +4,20 @@ const BASE_URL = "https://www.manorlanedrycleaners.co.uk";
 
 const serviceslugs = [
   "dry-cleaning",
+  "shirt-service",
   "laundry-service",
-  "wash-and-iron",
-  "alterations",
-  "duvet-bedding-cleaning",
+  "ironing-service",
+  "alterations-repairs",
+  "wedding-dress-cleaning",
+  "natives-cleaning",
+  "upholstery-cleaning",
+  "rug-cleaning",
+  "skiwear-cleaning",
+  "dye-service",
+  "school-uniform",
+  "shoe-repairs",
+  "curtain-cleaning",
+  "leather-suede-cleaning",
 ];
 
 const blogSlugs = [
