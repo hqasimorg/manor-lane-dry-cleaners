@@ -3,7 +3,14 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Star, Quote } from "lucide-react";
 import { getGoogleReviews } from "@/lib/google/reviews";
 
-const staticReviews = [
+interface NormalisedReview {
+  name: string;
+  text: string;
+  rating: number;
+  relative_time_description: string;
+}
+
+const staticReviews: NormalisedReview[] = [
   {
     name: "Sarah Mitchell",
     text: "I've been using Manor Lane for over 3 years now. They always do an excellent job with my suits and the staff are so friendly. Highly recommend!",
@@ -27,7 +34,18 @@ const staticReviews = [
 export async function TestimonialSection() {
   const data = await getGoogleReviews();
 
-  const reviews = data?.reviews.filter((r) => r.rating >= 4).slice(0, 6) ?? staticReviews;
+  const reviews: NormalisedReview[] = data
+    ? data.reviews
+        .filter((r) => r.rating >= 4 && r.text)
+        .slice(0, 6)
+        .map((r) => ({
+          name: r.author_name,
+          text: r.text,
+          rating: r.rating,
+          relative_time_description: r.relative_time_description,
+        }))
+    : staticReviews;
+
   const overallRating = data?.rating ?? 5.0;
   const totalRatings = data?.totalRatings ?? null;
 
