@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { SITE_CONFIG } from "@/lib/constants/site";
-import { Award, Heart, PoundSterling, Clock } from "lucide-react";
+import { Award, PoundSterling, Zap, Home, Eye } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Manor Lane Dry Cleaners | Hither Green, London",
@@ -15,30 +15,36 @@ export const metadata: Metadata = {
   },
 };
 
-const values = [
+const reasons = [
   {
     icon: Award,
-    title: "Quality First",
+    title: "Quality Assurance",
     description:
-      "Every item inspected, every stain treated with care. We never cut corners.",
-  },
-  {
-    icon: Heart,
-    title: "Local Service",
-    description:
-      "We're part of the South East London community, not a faceless chain.",
+      "Our experienced team uses advanced cleaning techniques and high-quality products to ensure your garments look their best. We perform thorough inspections on all items before they leave our facility.",
   },
   {
     icon: PoundSterling,
-    title: "Honest Pricing",
+    title: "Affordable Prices",
     description:
-      "Clear costs upfront. No surprises when you collect.",
+      "We believe that quality laundry services should be accessible to everyone. Our transparent pricing structure ensures you know exactly what you're paying for — no hidden fees.",
   },
   {
-    icon: Clock,
-    title: "Reliable Turnaround",
+    icon: Zap,
+    title: "Quick Turnaround",
     description:
-      "We know you need your clothes back on time. We deliver.",
+      "Need your clothes cleaned in a hurry? We offer same-day or next-day service for most garments. We value your time and deliver fast, reliable service without compromising on quality.",
+  },
+  {
+    icon: Home,
+    title: "All Done In-House",
+    description:
+      "We handle all cleaning processes in-house, ensuring every garment receives the personal touch it deserves. Your clothes are never sent elsewhere — they stay with our team from start to finish.",
+  },
+  {
+    icon: Eye,
+    title: "Attention to Detail",
+    description:
+      "From removing tough stains to repairing minor damages, we go the extra mile. Our team takes pride in giving every item special attention, whether it's a business suit, a wedding dress, or everyday wear.",
   },
 ];
 
@@ -92,24 +98,24 @@ export default function AboutPage() {
       <section className="bg-white section-padding">
         <Container>
           <SectionHeader
-            title="Our Values"
-            subtitle="The principles that guide everything we do."
+            title="Why Choose Manor Lane Dry Cleaners?"
+            subtitle="Whether you need a one-time service or regular cleaning, we're your trusted partner for all your garment care needs."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {values.map((value) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {reasons.map((reason) => (
               <div
-                key={value.title}
-                className="bg-neutral-off-white rounded-lg p-6 text-center"
+                key={reason.title}
+                className="bg-neutral-off-white rounded-lg p-6"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <reason.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-black mb-2">
-                  {value.title}
+                  {reason.title}
                 </h3>
-                <p className="text-sm text-neutral-dark-grey">
-                  {value.description}
+                <p className="text-sm text-neutral-dark-grey leading-relaxed">
+                  {reason.description}
                 </p>
               </div>
             ))}

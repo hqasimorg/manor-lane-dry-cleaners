@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ServiceSection } from "@/components/sections/ServiceSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 import { PricingPreviewSection } from "@/components/sections/PricingPreviewSection";
 import { TestimonialSection } from "@/components/sections/TestimonialSection";
 import { AreaCoverageSection } from "@/components/sections/AreaCoverageSection";
@@ -23,6 +24,7 @@ export default function HomePage() {
       <HeroSection />
       <ServiceSection />
       <HowItWorksSection />
+      <WhyChooseUsSection />
       <PricingPreviewSection />
       <TestimonialSection />
       <AreaCoverageSection />
