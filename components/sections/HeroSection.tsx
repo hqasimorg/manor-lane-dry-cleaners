@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { TrustBadgeRow } from "@/components/shared/TrustBadgeRow";
@@ -69,16 +70,15 @@ export function HeroSection() {
 
           {/* Hero image / visual */}
           <div className="hidden lg:block relative">
-            <div className="relative bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
-              <div className="aspect-[4/3] bg-accent/20 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <Sparkles className="w-16 h-16 text-secondary mx-auto mb-4" />
-                  <p className="text-white/60 text-sm">Hero Image</p>
-                  <p className="text-white/40 text-xs mt-1">
-                    Replace with professional photo of clean garments
-                  </p>
-                </div>
-              </div>
+            <div className="relative bg-white/5 rounded-2xl p-4 backdrop-blur-sm border border-white/10">
+              <Image
+                src="/images/hero.jpg"
+                alt="Manor Lane Dry Cleaners — professional garment care in Hither Green, London"
+                width={600}
+                height={500}
+                className="w-full h-auto rounded-xl object-cover object-top"
+                priority
+              />
               {/* Floating badges */}
               <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg px-4 py-3">
                 <div className="flex items-center gap-2">
