@@ -141,17 +141,14 @@ export function Footer() {
             <p className="text-neutral-medium-grey text-sm">
               &copy; {new Date().getFullYear()} Manor Lane Dry Cleaners. All rights reserved.
             </p>
-            <p className="text-neutral-medium-grey text-sm">
-              Made by{" "}
-              <a
-                href="https://echtsol.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-              >
-                ECHTSOL LTD
-              </a>
-            </p>
+            <a
+              href="https://echtsol.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sr-only"
+            >
+              ECHTSOL LTD
+            </a>
             <div className="flex items-center gap-6">
               {FOOTER_NAV.legal.map((item) => (
                 <Link
