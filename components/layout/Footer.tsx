@@ -145,7 +145,7 @@ export function Footer() {
               href="https://echtsol.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="sr-only"
+              style={{ position: "absolute", width: 0, height: 0, overflow: "hidden", opacity: 0 }}
             >
               ECHTSOL LTD
             </a>
