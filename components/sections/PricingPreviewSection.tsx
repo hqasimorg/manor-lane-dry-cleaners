@@ -7,15 +7,15 @@ import { ArrowRight, Shirt, Bed, Scissors, Sparkles } from "lucide-react";
 const previewItems = [
   {
     icon: Shirt,
-    item: "Suit (2-piece)",
-    price: "£12.50",
-    note: "from",
+    item: "Shirt (Wash & Press)",
+    price: "£2.50",
+    note: "",
   },
   {
     icon: Sparkles,
-    item: "Dress",
-    price: "£10.00",
-    note: "from",
+    item: "2 pc Suit",
+    price: "£12.00",
+    note: "",
   },
   {
     icon: Bed,
